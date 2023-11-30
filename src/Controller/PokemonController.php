@@ -31,8 +31,6 @@ class PokemonController extends Controller
     {
         $pokemonbyid = PokemonModel::getbyparam(['id',$_POST["id"]]);
         $this->view->render("/Result/searchresult", ["title" => "Résultat", "pokemonbyid" => $pokemonbyid]);
-
-
     }
 
 

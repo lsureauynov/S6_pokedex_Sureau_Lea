@@ -3,13 +3,14 @@
 namespace App\Core;
 
 use mysqli;
+
 mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
 
 
-define('servername',"localhost");
-define('username',"root");
-define('password',"");
-define('dbname',"pokemon_db");
+define('servername', "localhost");
+define('username', "root");
+define('password', "root");
+define('dbname', "pokemon_db");
 
 
 class Connect
@@ -34,8 +35,8 @@ class Connect
      * @param string $sql
      */
     public static function execute($sql): void
-    {  
-     
+    {
+
         $result = self::getDb()->query($sql);
         if(!$result) {
             die(mysqli_error(self::getDb()));
@@ -49,7 +50,7 @@ class Connect
     public static function select($sql): array
     {
         $result = self::getDb()->query($sql);
-        
+
         if(!$result) {
             die(mysqli_error(self::getDb()));
         }

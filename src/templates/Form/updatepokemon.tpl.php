@@ -18,8 +18,11 @@
 
             <form action="index.php?p=PokemonController/update" method="post">
             <label> Id du pokemon choisi :</label>
-            <input name="id" id="id" type="number"  required/>
-
+            <select name="id" id="id" type="number">
+                <?php foreach($getpokemon as $pokemon) {
+                    ?><option value=<?php echo $pokemon->getId() ?> ><?php print_r($pokemon->getId()) ?></option><?php
+                }?>
+            </select>
             <br />
 
             <label> Nom du Pokemon mise à jour :</label>

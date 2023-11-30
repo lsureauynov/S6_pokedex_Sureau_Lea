@@ -19,13 +19,17 @@
         }
 
         ?>
-
-    <form action="index.php?p=PokemonController/delete" method="post">
-        <label> Id du Pokemon à supprimer :</label>
-        <input name="id" id="id" type="number" required/>
+        <form action="index.php?p=PokemonController/delete" method="post">
+        <label> Id du pokemon choisi :</label>
+        <select name="id" id="id">
+                <?php foreach($getpokemon as $pokemon) {
+                    ?><option value= <?php echo $pokemon->getId() ?> ><?php print_r($pokemon->getId()) ?></option><?php
+                }?>
+            </select>
  
         <button type="submit">Supprimer</button>
-    </form>
+        </form>
+ 
 
     <?php
     } else {
